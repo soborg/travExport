@@ -40,6 +40,10 @@ I've found no scheduling information for each card.
 
 Done.
 
+# Example
+
+Check out `example_output_card.json` for an example of what the output (of one card) contains and looks like.
+
 
 # Caveats
 
