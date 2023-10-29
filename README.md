@@ -22,9 +22,15 @@ Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this 
 ### Installation
 
 
-https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
+- Open this gist: https://gist.github.com/soborg/ea25fb2cf669688a57f45e7c404077af
+- Click 'raw'.
+- A GreaseMonkey prompt should pop up, click 'Install' to install.
 
-Rest of the owl.
+If you can read JavaScript, please read it through and verify that it doesn't do anything harmful.
+
+If you feel like it does something harmful, please make an issue and report your findings.
+
+Don't just trust code from random strangers.
 
 
 ### Usage
