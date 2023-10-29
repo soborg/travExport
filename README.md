@@ -22,7 +22,7 @@ Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this 
 ### Installation
 
 
-https://github.com/soborg/travExport/raw/main/gm-travexport.users.js
+https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
 
 Rest of the owl.
 
