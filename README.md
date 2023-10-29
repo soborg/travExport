@@ -72,6 +72,17 @@ I've found no scheduling information for each card.
 
 Done.
 
+# Contributing
+
+Feel free to request features or make pull-requests for stuff you'd like the project to do.
+
+
+# Help?
+
+Feel free to make an issue if something's broken or otherwise doesn't work as expected. I can't guarantee immediate fixes, but feedback is welcome.
+
+
+
 # Example
 
 Check out `example_output_card.json` for an example of what the output (of one card) contains and looks like.
