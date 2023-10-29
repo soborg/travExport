@@ -1,12 +1,44 @@
 # travExport
 
-Want to save/backup your personal notes from a Traverse deck?
+Want to backup your personal notes from a Traverse deck?
 
-Well, here's a rough guide to help you through it.
-It's still very much a manual process, but there may be ways to automate this further.
+Well, look no further, there are a number of methods to do this, and they all produce the same result. Method 1 is more accessible and the recommended method.
+
+Choose your own adventure below.
 
 
-## Backing up a deck from Traverse
+## Method 1: GreaseMonkey user script installation and usage
+
+This script injects a download-button on the navigation bar of Traverse, when you have a deck or level opened. The script downloads only the level you've opened, so if you want to download all your notes across all decks, you should do so for every level/deck.
+
+
+Prerequisites:
+- Firefox
+- GreaseMonkey extension installed in Firefox
+
+Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this has not been tested yet. Proceed on your own peril.
+
+
+### Installation
+
+Rest of the owl.
+
+
+### Usage
+
+- open https://traverse.link and navigate to a deck of your choice
+- after a few seconds, a button should appear on the top right of the screen
+- you should expand all the subdecks for which you want the nested card notes exported.
+- click the 'travExport' button and it should download a file.
+
+The resulting file is always named 'dump.json', so you should probably rename it to something more readable if you want to download multiple levels/decks.
+
+The file is a well-structured JSON file containing all your notes for all the visible cards in the deck.
+
+
+## Method 2: Manually backing up a deck from Traverse
+
+Here's a rough guide to do the same process manually:
 
 - Open Traverse app in a browser.
 - Open Console
@@ -43,10 +75,3 @@ Done.
 # Example
 
 Check out `example_output_card.json` for an example of what the output (of one card) contains and looks like.
-
-
-# Caveats
-
-This method *only* works while the traverse app logs the topicCards object to the console.
-If/when they remove that, well... RIP.
-
