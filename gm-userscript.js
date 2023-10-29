@@ -3,13 +3,16 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Download notes and stuff from a Traverse deck
 // @author			 soborg
-// @version      0.1
+// @version      0.2
 // @grant        none
-// @match        https://traverse.link/Mandarin_Blueprint/*
+// @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
 //
+//
+// 0.2   (2023-10-29): Fix an issue where the export button would not appear
+//                     across page navigations.
 //
 //
 // 0.1   (2023-10-29): Initial working version.
@@ -35,6 +38,11 @@
   };
 
   collectAndDownloadCards = function() {
+    if (document.location.href.indexOf('/Mandarin_Blueprint/') < 0) {
+      alert("You must navigate to a deck/level to download");
+      return;
+    }
+
     var cards = [];
     var topics = document.getElementsByClassName('react-flow__node react-flow__node-groupNode selectable');
 
@@ -67,7 +75,7 @@
       catch {
         // apparently, some of the elements are functions and stuff that does not have a 'getAttribute' function... soooooooooo, ignore (TODO: make better instead of try-catch)
         ;
-   		}
+   	  }
     }
     // fix the filename of the title, maybe use this element:
     // <div class="text-lg text-black mr-1 select-none cursor-pointer">Level 39 - Intermediate</div>
@@ -89,5 +97,20 @@
     console.debug('download button created');
   };
 
-  window.setTimeout(createDownloadButton, 4000);
+  unsafeWindow.we_are_there = false;
+  function areWeThereYet() {
+    if (document.location.href.indexOf("/Mandarin_Blueprint/") > 0) {
+      if (!unsafeWindow.we_are_there) {
+        createDownloadButton();
+        unsafeWindow.we_are_there = true;
+      }
+//      console.debug("yay");
+    } else {
+      unsafeWindow.we_are_there = false;
+//      console.debug("nay");
+    }
+  }
+
+  window.setInterval(areWeThereYet, 5000); // occasional check to see if we're in the right spot
+
 })();
