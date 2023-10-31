@@ -22,8 +22,7 @@ Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this 
 ### Installation
 
 
-- Open this gist: https://gist.github.com/soborg/ea25fb2cf669688a57f45e7c404077af
-- Click 'raw'.
+- Open the GreaseMonkey user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
 - A GreaseMonkey prompt should pop up, click 'Install' to install.
 
 If you can read JavaScript, please read it through and verify that it doesn't do anything harmful.
