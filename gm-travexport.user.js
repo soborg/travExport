@@ -77,10 +77,8 @@
         ;
    	  }
     }
-    // fix the filename of the title, maybe use this element:
-    // <div class="text-lg text-black mr-1 select-none cursor-pointer">Level 39 - Intermediate</div>
-    //
-   	download('card.json', cards);
+    var filename = document.getElementsByClassName('text-lg text-black')[0].textContent.replaceAll(' ', '');
+   	download(filename + '.json', cards);
   };
 
   function createDownloadButton() {
