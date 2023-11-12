@@ -3,12 +3,18 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Download notes and stuff from a Traverse deck
 // @author			 soborg
-// @version      0.2
+// @version      0.4
 // @grant        none
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+//
+// 0.4   (2023-11-12): nullify some more fields from the exported cards.
+//
+//
+// 0.3   (2023-11-05): The downloaded file derives the name from the current deck.
 //
 //
 // 0.2   (2023-10-29): Fix an issue where the export button would not appear
@@ -24,7 +30,7 @@
 
 
 (function() {
-
+    
   //    window.formatTopicCards = function(obj) { obj.topicCards.map( (x) => { x.user = null; x.graphInfo = null; x.topicCard = null; })};
 
   download = function(filename, text) {
@@ -38,11 +44,12 @@
   };
 
   collectAndDownloadCards = function() {
+
     if (document.location.href.indexOf('/Mandarin_Blueprint/') < 0) {
       alert("You must navigate to a deck/level to download");
       return;
     }
-
+    
     var cards = [];
     var topics = document.getElementsByClassName('react-flow__node react-flow__node-groupNode selectable');
 
@@ -63,6 +70,10 @@
               card.user = null;
               card.graphInfo = null;
               card.topicCard = null;
+              for (var u in card.users) {
+                card.users[u].fieldsHtml = null;
+                card.users[u].users = null;
+              }
               cards.push(card);
               break;
             }
@@ -73,9 +84,9 @@
         }
       }
       catch {
-        // apparently, some of the elements are functions and stuff that does not have a 'getAttribute' function... soooooooooo, ignore (TODO: make better instead of try-catch)
+        // apparently, some of the elements are functions and stuff, that does not have a 'getAttribute' function... soooooooooo, ignore (TODO: make better instead of try-catch)
         ;
-   	  }
+   		}
     }
     var filename = document.getElementsByClassName('text-lg text-black')[0].textContent.replaceAll(' ', '');
    	download(filename + '.json', cards);
@@ -95,20 +106,20 @@
     console.debug('download button created');
   };
 
-  unsafeWindow.we_are_there = false;
+	unsafeWindow.we_are_there = false;
   function areWeThereYet() {
     if (document.location.href.indexOf("/Mandarin_Blueprint/") > 0) {
-      if (!unsafeWindow.we_are_there) {
+      if (!unsafeWindow.we_are_there) { 
         createDownloadButton();
         unsafeWindow.we_are_there = true;
       }
-//      console.debug("yay");
+//      console.log("yay");
     } else {
       unsafeWindow.we_are_there = false;
-//      console.debug("nay");
+//      console.log("nay");
     }
   }
 
-  window.setInterval(areWeThereYet, 5000); // occasional check to see if we're in the right spot
+  window.setInterval(areWeThereYet, 5000); // occasional check to see if we're (still) in the right spot
 
 })();
