@@ -3,12 +3,18 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author			 soborg
-// @version      0.8
+// @version      0.9
 // @grant        unsafeWindow
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+//
+// 0.9   (2023-12-04): cleaned up most (all?) of the markup tags, showing only their relevant links or values.
+//                     embedded image links from the user notes are extracted and stored with the text list elements.
+//                     removed traverse.link URI from prop/actor/set links.
+//
 //
 // 0.8   (2023-12-04): E-button should now be visible in flashbang-mode
 //                     Script should now work in Chrome/Chromium-based browsers (only tested on Chrome).
@@ -60,6 +66,35 @@
     document.body.removeChild(element);
   };
 
+  unMarkupifyLink = function(x) {
+    var link = x.split("]")[0].replace("[", "").replace("!", "");
+    if (link.length == 0) {
+      link = x.split("(")[1].replace(")", "");
+    }
+    link = link.replaceAll("\\", ""); // no need to escape, let's remote that
+    return link;
+  };
+  
+  decodeComp = function(x) {
+    return decodeURI(x.replace("https://traverse.link/Mandarin_Blueprint/", ""));
+  };
+  
+  cleanUserField = function(field) {
+    var new_fields = []
+    var re = new RegExp("\\!\\[\\](.*)\\)", "g");
+    var markup = field.match(re);
+    for (var idx in markup) {
+      var mlink = markup[idx];
+      var cleaned = unMarkupifyLink(mlink);
+      field = field.replace(mlink, "");
+      new_fields.push(cleaned);
+    }
+    field = field.trim();
+    if (field.length > 0)
+    	new_fields.splice(0, 0, field);
+    return new_fields;
+  };
+  
   collectAndDownloadCards = function() {
 
     if (document.location.href.indexOf('/Mandarin_Blueprint/') < 0) {
@@ -94,6 +129,11 @@
               delete card.templateRebuildTime;
               delete card.allowDuplicate;
               delete card.free;
+              delete card.flowNode;
+              delete card.flowChildren;
+              delete card.flowParents;
+              delete card.doRepeat;
+              delete card.appearance;
 
               for (var u in card.users) {
                 if (u === 'Mandarin_Blueprint') {
@@ -115,39 +155,50 @@
                     card.fields["Top-Down Word(s)"] = card.fields["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n')
                   }
                   if (card.fields.Tags) {
-                    card.fields.Tags = card.fields.Tags.split('\n');
+                    card.fields.Tags = card.fields.Tags.split('\n').map(unMarkupifyLink);
                   }
                   if (card.fields.Audio) {
-                  	card.fields.Audio = card.fields.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5);
+                  	card.fields.Audio = card.fields.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
                   }
                   if (card.fields.AUDIO) {
-                  	card.fields.AUDIO = card.fields.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5);
+                  	card.fields.AUDIO = card.fields.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
                   }
+                  if (card.fields["STROKE ORDER"]) {
+                    card.fields["STROKE ORDER"] = unMarkupifyLink(card.fields["STROKE ORDER"]);
+                  }
+
                   if (card.fields.Links) {
                     var link_map = {};
                     var splitvalues = card.fields.Links.replaceAll('&nbsp;', '').split('**')
                     var prev_key = null;
 
                     for (splitidx in splitvalues) {
-                      var splitvalue = splitvalues[splitidx].replaceAll(' ', '').replaceAll('\n', '').replaceAll(':', '');
+                      var splitvalue = splitvalues[splitidx].replaceAll(' ', '').replaceAll('\n', '').trim();
                       if (splitvalue.length == 0) {
                         continue;
                       }
                       else if (prev_key != null && prev_key.length > 0) {
-                        if (prev_key == 'Prop(s)') {
-                          splitvalue = splitvalue.split(',');
+                        if (prev_key == "Characters") {
+                          splitvalue = splitvalue.split(')[').map(unMarkupifyLink).map(decodeComp);
+                        } else if (prev_key == "Prop(s)") {
+                          splitvalue = splitvalue.split(',').map(unMarkupifyLink).map(decodeComp);
+                        } else {
+                          splitvalue = decodeComp(unMarkupifyLink(splitvalue));
                         }
-                        link_map[prev_key] = splitvalue;
+                        link_map[prev_key] = splitvalue
                         prev_key = null;
                         continue
                       } else {
-                        prev_key = splitvalue.replaceAll(' ', '');
+                        prev_key = splitvalue.replaceAll(' ', '').replaceAll(":", "");
                       }
                     }
                     card.fields.Links = link_map;
                   }
                 } else {
                   card.user_fields = {...card.users[u].fields};
+                  if (card.user_fields["NOTES"]) {
+                    card.user_fields["NOTES"] = cleanUserField(card.user_fields["NOTES"]);
+                  }
                 }
               }
               delete card.users;
