@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         travExport
 // @namespace    https://github.com/soborg/travExport
-// @description  Download notes and stuff from a Traverse deck
+// @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author			 soborg
-// @version      0.6
+// @version      0.7
 // @grant        none
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+// 0.7   (2023-12-04): export button is now a nice subtle E in the top right corner.
 //
 //
 // 0.6   (2023-12-04): possibly fix an issue where the export button would appear on the review modal during reviews.
@@ -157,7 +159,7 @@
       catch {
         // apparently, some of the elements are functions and stuff, that does not have a 'getAttribute' function... soooooooooo, ignore (TODO: make better instead of try-catch)
         ;
-   		}
+      }
     }
     var filename = document.getElementsByClassName('text-lg text-black')[0].textContent.replaceAll(' ', '');
    	download(filename + '.json', cards);
@@ -185,16 +187,17 @@
     button.setAttribute('class', 'homescreen-button');
     button.addEventListener("click", collectAndDownloadCards, false);
     var span = document.createElement('span');
-    span.textContent = "travExport";
+    span.textContent = "E";
+    span.title = "Export the current level to JSON";
     console.debug("appending span");
     button.appendChild(span);
-		var toolbar = document.getElementsByClassName('MuiToolbar-regular')[0];
+    var toolbar = document.getElementsByClassName('MuiToolbar-regular')[0];
     var anchor = toolbar.getElementsByClassName('homescreen-button')[0].parentNode;
     anchor.appendChild(button);
     console.debug('download button created');
   };
 
-	unsafeWindow.we_are_there = false;
+  unsafeWindow.we_are_there = false;
   function areWeThereYet() {
     if (document.location.href.indexOf("/Mandarin_Blueprint/") > 0) {
       if (!unsafeWindow.we_are_there) { 
