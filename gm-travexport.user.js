@@ -3,12 +3,17 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Download notes and stuff from a Traverse deck
 // @author			 soborg
-// @version      0.5
+// @version      0.6
 // @grant        none
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+//
+// 0.6   (2023-12-04): possibly fix an issue where the export button would appear on the review modal during reviews.
+//                     save the deck title on each card.
+//
 //
 // 0.5   (2023-12-04): a whole lot of cleanup for the final cards.
 //                     Review/visit/and other Traverse specific fields are removed
@@ -38,8 +43,6 @@
 
 
 (function() {
-    
-  //    window.formatTopicCards = function(obj) { obj.topicCards.map( (x) => { x.user = null; x.graphInfo = null; x.topicCard = null; })};
 
   download = function(filename, text) {
     var element = document.createElement('a');
@@ -80,22 +83,13 @@
               delete card.graphInfo;
               delete card.cardUserLoaded;
               delete card.isDummy;
-              delete card.topicCard;
+              card.deckTitle = card.topicCard.title; // save the title for toplevel
+              delete card.topicCard;             // then kill it, as it is recursive
               delete card.templateRebuildTime;
               delete card.allowDuplicate;
               delete card.free;
-              
+
               for (var u in card.users) {
-                delete card.users[u].fieldsHtml;
-                delete card.users[u].users;
-                delete card.users[u].notes;
-                delete card.users[u].prompts;
-                delete card.users[u].reviews;
-                delete card.users[u].finished;
-                delete card.users[u].seen;
-                delete card.users[u].lastOpened;
-                delete card.users[u].dueTime;
-                delete card.users[u].reviewTime;
                 if (u === 'Mandarin_Blueprint') {
                 	card.fields = {...card.users[u].fields};
                   // a whole lot of cleanup
@@ -104,11 +98,12 @@
                     var sentsplit = card.fields.Sentence.split('==');
                     for (var spl in sentsplit) {
                       if (spl % 2 == 1) {
-                        card.fields['Highlights'].push(sentsplit[spl]);
+                        var w = sentsplit[spl];
+                        if (card.fields['Highlights'].indexOf(w) < 0) {
+                       	  card.fields['Highlights'].push(sentsplit[spl]);
+                        }
                       }
                     }
-                    // var highlighted_word = card.fields.Sentence.split('==')[1];
-                    // card.fields['Highlight'] = highlighted_word;
                   }
                   if (card.fields["Top-Down Word(s)"]) {
                     card.fields["Top-Down Word(s)"] = card.fields["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n')
@@ -134,7 +129,7 @@
                       }
                       else if (prev_key != null && prev_key.length > 0) {
                         if (prev_key == 'Prop(s)') {
-													splitvalue = splitvalue.split(',');
+                          splitvalue = splitvalue.split(',');
                         }
                         link_map[prev_key] = splitvalue;
                         prev_key = null;
@@ -143,9 +138,7 @@
                         prev_key = splitvalue.replaceAll(' ', '');
                       }
                     }
-
-										card.fields.Links = link_map;
-                    
+                    card.fields.Links = link_map;
                   }
                 } else {
                   card.user_fields = {...card.users[u].fields};
@@ -176,14 +169,14 @@
     }
     catch {
       console.log('obj has no click function: ', deck);
-  	}
+    }
   };
 
   function expandTopicDecks() {
     var decks = document.getElementsByClassName("react-flow__node react-flow__node-groupNode selectable parent");
     for (var i in decks) {
       var deck = decks[i];
-    	window.setTimeout(expand, 1000*i, deck);
+      window.setTimeout(expand, 1000*i, deck);
     }
   };
 
@@ -195,8 +188,8 @@
     span.textContent = "travExport";
     console.debug("appending span");
     button.appendChild(span);
-
-    var anchor = document.getElementsByClassName('homescreen-button')[0].parentNode;
+		var toolbar = document.getElementsByClassName('MuiToolbar-regular')[0];
+    var anchor = toolbar.getElementsByClassName('homescreen-button')[0].parentNode;
     anchor.appendChild(button);
     console.debug('download button created');
   };
