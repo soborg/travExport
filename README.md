@@ -25,23 +25,18 @@ Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this 
 - Open the GreaseMonkey user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
 - A GreaseMonkey prompt should pop up, click 'Install' to install.
 
-If you can read JavaScript, please read it through and verify that it doesn't do anything harmful.
-
-If you feel like it does something harmful, please make an issue and report your findings.
-
-Don't just trust code from random strangers.
-
 
 ### Usage
 
 - open https://traverse.link and navigate to a deck of your choice
-- after a few seconds, a button should appear on the top right of the screen
-- you should expand all the subdecks for which you want the nested card notes exported.
-- click the 'travExport' button and it should download a file.
+- after a few seconds, a button with the letter `E` should appear on the top right of the screen
+- you should expand all the subdecks for which you want the nested card notes exported
+- click the `E` button and it should download a file
 
-The resulting file is always named 'dump.json', so you should probably rename it to something more readable if you want to download multiple levels/decks.
-
+The resulting file is always named after the current level, e.g. `Level40-Intermediate.json'.
 The file is a well-structured JSON file containing all your notes for all the visible cards in the deck.
+
+You can use https://jsoneditoronline.org/ to inspect and navigate the resulting JSON file. Just paste the contents of the downloaded json into the editor on the left of the screen and click `>` beneath `Transform`.
 
 
 ## Method 2: Manually backing up a deck from Traverse
