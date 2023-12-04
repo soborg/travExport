@@ -3,12 +3,16 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author			 soborg
-// @version      0.7
-// @grant        none
+// @version      0.8
+// @grant        unsafeWindow
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+// 0.8   (2023-12-04): E-button should now be visible in flashbang-mode
+//                     Script should now work in Chrome/Chromium-based browsers (only tested on Chrome).
+//
 //
 // 0.7   (2023-12-04): export button is now a nice subtle E in the top right corner.
 //
@@ -159,7 +163,7 @@
       catch {
         // apparently, some of the elements are functions and stuff, that does not have a 'getAttribute' function... soooooooooo, ignore (TODO: make better instead of try-catch)
         ;
-      }
+   		}
     }
     var filename = document.getElementsByClassName('text-lg text-black')[0].textContent.replaceAll(' ', '');
    	download(filename + '.json', cards);
@@ -188,7 +192,8 @@
     button.addEventListener("click", collectAndDownloadCards, false);
     var span = document.createElement('span');
     span.textContent = "E";
-    span.title = "Export the current level to JSON";
+    span.setAttribute("title", "Export the current level to JSON");
+    span.setAttribute("class", "text-gray-800");
     console.debug("appending span");
     button.appendChild(span);
     var toolbar = document.getElementsByClassName('MuiToolbar-regular')[0];
