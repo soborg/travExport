@@ -1,40 +1,33 @@
 # travExport
-
 Want to backup your personal notes from a Traverse deck?
-
 Well, look no further, there are a number of methods to do this, and they all produce the same result. Method 1 is more accessible and the recommended method.
 
 Choose your own adventure below.
 
 
 ## Method 1: GreaseMonkey user script installation and usage
-
 This script injects a download-button on the navigation bar of Traverse, when you have a deck or level opened. The script downloads only the level you've opened, so if you want to download all your notes across all decks, you should do so for every level/deck.
 
-
 Prerequisites:
-- Firefox
-- GreaseMonkey extension installed in Firefox
-
-Note: It *may* work in TamperMonkey in Chrome/Chromium-based browsers, but this has not been tested yet. Proceed on your own peril.
+- Firefox or Chrome/Chromium/Edge
+- GreaseMonkey extension for Firefox, TamperMonkey extension for Chrome/Chromium/Edge
 
 
 ### Installation
 
-
-- Open the GreaseMonkey user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
-- A GreaseMonkey prompt should pop up, click 'Install' to install.
+- Open this user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
+- A prompt should open, click 'Install' to install.
 
 
 ### Usage
 
-- open https://traverse.link and navigate to a deck of your choice
+- open https://traverse.link/app and navigate to a deck of your choice
 - after a few seconds, a button with the letter `E` should appear on the top right of the screen
-- you should expand all the subdecks for which you want the nested card notes exported
+- expand all the subdecks for which you want the nested card notes exported
 - click the `E` button and it should download a file
 
-The resulting file is always named after the current level, e.g. `Level40-Intermediate.json'.
-The file is a well-structured JSON file containing all your notes for all the visible cards in the deck.
+The resulting file is named after the current level, e.g. `Level40-Intermediate.json'.
+The file is a well-structured JSON file containing all your notes for all the visible cards in the level/deck.
 
 You can use https://jsoneditoronline.org/ to inspect and navigate the resulting JSON file. Just paste the contents of the downloaded json into the editor on the left of the screen and click `>` beneath `Transform`.
 
