@@ -2,13 +2,17 @@
 // @name         travExport
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
-// @author       soborg
-// @version      0.11
+// @author			 soborg
+// @version      0.12
 // @grant        unsafeWindow,GM_addStyle
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+//
+// 0.12  (2023-12-05): support downloading very flattened (1 level) json, or lightly nested (2-3 levels)
+//
 //
 // 0.11  (2023-12-05): flatten the resulting card, no more (deeply) nested fields
 //                     option to include/exclude media links (exluded by default)
@@ -130,7 +134,15 @@
     return new_fields;
   };
   
-  collectAndDownloadCards = function() {
+  collectAndDownloadCardsFlat = function() { collectAndDownloadCards(true); };
+  collectAndDownloadCardsNested = function() { collectAndDownloadCards(false); };
+  
+  maybeFlatten = function(value, flatten, separator) {
+    if (!flatten) return value;
+    return value.join(separator);
+  }
+
+  collectAndDownloadCards = function(flat) {
 
     if (document.location.href.indexOf('/Mandarin_Blueprint/') < 0) {
       alert("You must navigate to a deck/level to download");
@@ -181,12 +193,17 @@
         delete card.appearance;
         delete card.userName;
         delete card.topic;
+        delete card.publishedJourneys;
+        delete card.template;
 
         for (var u in card.users) {
           if (u !== "Mandarin_Blueprint") {
             var user_fields = {...card.users[u].fields};
             if (user_fields["NOTES"]) {
               card.userNotes = cleanUserField(user_fields["NOTES"]);
+              if (flat) {
+                card.userNotes = card.userNotes.join('\n');
+              }
             }
             continue
           }
@@ -204,33 +221,35 @@
                 var w = sentsplit[spl];
                 if (card['Highlights'].indexOf(w) < 0) {
                   card['Highlights'].push(sentsplit[spl]);
+
                 }
               }
             }
+            card['Highlights'] = maybeFlatten(card['Highlights'], flat, '\n');
           }
           if (card["Top-Down Word(s)"]) {
-            card["Top-Down Word(s)"] = card["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n')
+            card["Top-Down Word(s)"] = maybeFlatten(card["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n'), flat, '\n');
           }
           if (card.Tags) {
-            card.Tags = card.Tags.split('\n').map(unMarkupifyLink);
+            card.Tags = maybeFlatten(card.Tags.split('\n').map(unMarkupifyLink), flat, ',');
           }
           if (card.Audio) {
             if (!includeMedia) {
-              card.Audio = [];
+              card.Audio = "";
             } else {
             	card.Audio = card.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
             }
           }
           if (card.AUDIO) {
             if (!includeMedia) {
-              card.AUDIO = [];
+              card.AUDIO = "";
             } else {
               card.AUDIO = card.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
             }
           }
           if (card["STROKE ORDER"]) {
             if (!includeMedia) {
-              card["STROKE ORDER"] = [];
+              card["STROKE ORDER"] = "";
             } else {
             	card["STROKE ORDER"] = unMarkupifyLink(card["STROKE ORDER"]);
             }
@@ -252,7 +271,7 @@
                 } else if (prev_key == "Prop(s)") {
                   splitvalue = splitvalue.split(',').map(unMarkupifyLink).map(decodeComp).filter((x) => x.length > 0);
                 } else {
-                  splitvalue = decodeComp(unMarkupifyLink(splitvalue));
+                  splitvalue = [decodeComp(unMarkupifyLink(splitvalue))];
                 }
                 link_map[prev_key] = splitvalue
                 prev_key = null;
@@ -261,7 +280,14 @@
               prev_key = splitvalue.replaceAll(' ', '').replaceAll(":", "");
 
             }
-            card.Links = link_map;
+            if (flat) {
+              for (const [key, value] of Object.entries(link_map)) {
+                card[key] = maybeFlatten(value, flat, ', ');
+              }
+              delete card.Links;
+            } else {
+            	card.Links = link_map;
+            }
           }
         }
         delete card.users;
@@ -324,6 +350,7 @@
       }
     });
     var outer_div = document.createElement('div');
+    outer_div.setAttribute('title', 'Traverse Export Toolbox');
     outer_div.classList.toggle("dropdown");
     var button = document.createElement('button');
     button.textContent = 'E';
@@ -337,13 +364,20 @@
     outer_div.appendChild(inner_div);
     
     var a_export = document.createElement('a');
- //   a_export.setAttribute('href', '#');
-    a_export.textContent = 'Export as JSON';
-    a_export.addEventListener('click', collectAndDownloadCards, false);
+ 		a_export.setAttribute('title', 'Download visible cards as a flattened JSON (csv-friendly format)');
+    a_export.textContent = 'Export as JSON (csv-friendly)';
+    a_export.addEventListener('click', collectAndDownloadCardsFlat, false);
     inner_div.appendChild(a_export);
 
+    var a_export_nested = document.createElement('a');
+    a_export.setAttribute('title', 'Download visible cards as a nested JSON (machine-readable format)');
+    a_export_nested.textContent = 'Export as JSON (nested)';
+    a_export_nested.addEventListener('click', collectAndDownloadCardsNested, false);
+    inner_div.appendChild(a_export_nested);
+    
+    
     var a_expand = document.createElement('a');
- //   a_expand.setAttribute('href', '#');
+    a_expand.setAttribute('title', 'Attempt to open all decks on the page');
     a_expand.textContent = 'Expand all decks (takes a few seconds)';
     a_expand.addEventListener('click', expandTopicDecks, false);
     inner_div.appendChild(a_expand);
