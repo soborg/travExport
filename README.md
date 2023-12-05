@@ -2,7 +2,7 @@
 This tool allows you to download all your notes for all cards that are open in a Traverse graph.
 
 
-# Why Does This Project Exist?
+## Why Does This Project Exist?
 Traverse is a proprietary and closed platform, with extremely limited/non-existing options to export personal notes.
 Some users have expressed a desire to be able to backup those exact personal notes, be it for any, but not limited to, the following reasons:
 
@@ -12,13 +12,15 @@ Some users have expressed a desire to be able to backup those exact personal not
 Whatever the reason, this tool attempts to solve that.
 
 
+
+# Installation
+
 **Prerequisites:**
 - Firefox or Chrome/Chromium/Edge
 - GreaseMonkey extension for Firefox, TamperMonkey extension for Chrome/Chromium/Edge
 - A valid user account on Traverse
 
-
-## Installation
+## Installing the Tool:
 - Open the following user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
 - A prompt should appear automatically, click `Install` to install.
 
