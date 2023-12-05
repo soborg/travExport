@@ -10,6 +10,7 @@
 
 // Version history
 //
+// 0.14  (2023-12-05): should now also work properly in Edge (possibly other Chromium browsers too)
 //
 // 0.13  (2023-12-05): fix title shenanigans on download buttons
 //
