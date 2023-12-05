@@ -2,7 +2,7 @@
 // @name         travExport
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
-// @author			 soborg
+// @author       soborg
 // @version      0.11
 // @grant        unsafeWindow,GM_addStyle
 // @match        https://traverse.link/*
@@ -10,7 +10,8 @@
 
 // Version history
 //
-// 0.11  (2023-12-05): blank out audio and stroke order links.
+// 0.11  (2023-12-05): flatten the resulting card, no more (deeply) nested fields
+//                     option to include/exclude media links (exluded by default)
 //
 //
 // 0.10  (2023-12-05): button replaced by a nice fancy menu, adding:
@@ -66,7 +67,8 @@
 
 
 (function() {
-    
+  var includeMedia = false;
+
   function GM_addStyle(css) {
      const style = document.getElementById("GM_addStyleByTravExport") || (function() {
       const style = document.createElement('style');
@@ -177,48 +179,66 @@
         delete card.flowParents;
         delete card.doRepeat;
         delete card.appearance;
+        delete card.userName;
+        delete card.topic;
 
         for (var u in card.users) {
           if (u !== "Mandarin_Blueprint") {
-            card.user_fields = {...card.users[u].fields};
-            if (card.user_fields["NOTES"]) {
-              card.user_fields["NOTES"] = cleanUserField(card.user_fields["NOTES"]);
+            var user_fields = {...card.users[u].fields};
+            if (user_fields["NOTES"]) {
+              card.userNotes = cleanUserField(user_fields["NOTES"]);
             }
             continue
           }
-          card.fields = {...card.users[u].fields};
+
+          var fields = {...card.users[u].fields};
+          for (const [key, value] of Object.entries(fields)) { // seed the card object with the nested fields
+            card[key] = value;
+          }
           // a whole lot of cleanup
-          if (card.fields.Sentence) {
-            card.fields['Highlights'] = [];
-            var sentsplit = card.fields.Sentence.split('==');
+          if (card.Sentence) {
+            card['Highlights'] = [];
+            var sentsplit = card.Sentence.split('==');
             for (var spl in sentsplit) {
               if (spl % 2 == 1) {
                 var w = sentsplit[spl];
-                if (card.fields['Highlights'].indexOf(w) < 0) {
-                  card.fields['Highlights'].push(sentsplit[spl]);
+                if (card['Highlights'].indexOf(w) < 0) {
+                  card['Highlights'].push(sentsplit[spl]);
                 }
               }
             }
           }
-          if (card.fields["Top-Down Word(s)"]) {
-            card.fields["Top-Down Word(s)"] = card.fields["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n')
+          if (card["Top-Down Word(s)"]) {
+            card["Top-Down Word(s)"] = card["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n')
           }
-          if (card.fields.Tags) {
-            card.fields.Tags = card.fields.Tags.split('\n').map(unMarkupifyLink);
+          if (card.Tags) {
+            card.Tags = card.Tags.split('\n').map(unMarkupifyLink);
           }
-          if (card.fields.Audio) {
-            card.fields.Audio = []; // card.fields.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+          if (card.Audio) {
+            if (!includeMedia) {
+              card.Audio = [];
+            } else {
+            	card.Audio = card.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+            }
           }
-          if (card.fields.AUDIO) {
-            card.fields.AUDIO = []; // card.fields.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+          if (card.AUDIO) {
+            if (!includeMedia) {
+              card.AUDIO = [];
+            } else {
+              card.AUDIO = card.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+            }
           }
-          if (card.fields["STROKE ORDER"]) {
-            card.fields["STROKE ORDER"] = []; //unMarkupifyLink(card.fields["STROKE ORDER"]);
+          if (card["STROKE ORDER"]) {
+            if (!includeMedia) {
+              card["STROKE ORDER"] = [];
+            } else {
+            	card["STROKE ORDER"] = unMarkupifyLink(card["STROKE ORDER"]);
+            }
           }
 
-          if (card.fields.Links) {
+          if (card.Links) {
             var link_map = {};
-            var splitvalues = card.fields.Links.replaceAll('&nbsp;', '').split('**')
+            var splitvalues = card.Links.replaceAll('&nbsp;', '').split('**')
             var prev_key = null;
 
             for (splitidx in splitvalues) {
@@ -241,7 +261,7 @@
               prev_key = splitvalue.replaceAll(' ', '').replaceAll(":", "");
 
             }
-            card.fields.Links = link_map;
+            card.Links = link_map;
           }
         }
         delete card.users;
