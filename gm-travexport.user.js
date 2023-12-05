@@ -3,12 +3,14 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author			 soborg
-// @version      0.10
+// @version      0.11
 // @grant        unsafeWindow,GM_addStyle
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+// 0.11  (2023-12-05): blank out audio and stroke order links.
 //
 //
 // 0.10  (2023-12-05): button replaced by a nice fancy menu, adding:
@@ -205,13 +207,13 @@
             card.fields.Tags = card.fields.Tags.split('\n').map(unMarkupifyLink);
           }
           if (card.fields.Audio) {
-            card.fields.Audio = card.fields.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+            card.fields.Audio = []; // card.fields.Audio.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
           }
           if (card.fields.AUDIO) {
-            card.fields.AUDIO = card.fields.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
+            card.fields.AUDIO = []; // card.fields.AUDIO.replaceAll('&nbsp;', '').split('\n').filter((x) => x.replaceAll(' ', '').length > 5).map(unMarkupifyLink);
           }
           if (card.fields["STROKE ORDER"]) {
-            card.fields["STROKE ORDER"] = unMarkupifyLink(card.fields["STROKE ORDER"]);
+            card.fields["STROKE ORDER"] = []; //unMarkupifyLink(card.fields["STROKE ORDER"]);
           }
 
           if (card.fields.Links) {
