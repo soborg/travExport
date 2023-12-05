@@ -1,84 +1,70 @@
-# travExport
-Want to backup your personal notes from a Traverse deck?
-Well, look no further, there are a number of methods to do this, and they all produce the same result. Method 1 is more accessible and the recommended method.
-
-Choose your own adventure below.
+# Traverse Exporter
+This tool allows you to download all your notes for all cards that are open in a Traverse graph.
 
 
-## Method 1: GreaseMonkey user script installation and usage
-This script injects a download-button on the navigation bar of Traverse, when you have a deck or level opened. The script downloads only the level you've opened, so if you want to download all your notes across all decks, you should do so for every level/deck.
+# Why Does This Project Exist?
+Traverse is a proprietary and closed platform, with extremely limited/non-existing options to export personal notes.
+Some users have expressed a desire to be able to backup those exact personal notes, be it for any, but not limited to, the following reasons:
 
-Prerequisites:
+- the "all eggs in one basket"-problem. What happens if Traverse goes bankrupt or otherwise becomes unavailable?
+- a desire to store notes elsewhere (Excel/Google Spreadsheets/other), perhaps to keep simple lists of actors/sets/props for easier access/asset management.
+
+Whatever the reason, this tool attempts to solve that.
+
+
+**Prerequisites:**
 - Firefox or Chrome/Chromium/Edge
 - GreaseMonkey extension for Firefox, TamperMonkey extension for Chrome/Chromium/Edge
+- A valid user account on Traverse
 
 
-### Installation
-
-- Open this user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
-- A prompt should open, click 'Install' to install.
-
-
-### Usage
-
-- open https://traverse.link/app and navigate to a deck of your choice
-- after a few seconds, a button with the letter `E` should appear on the top right of the screen
-- expand all the subdecks for which you want the nested card notes exported
-- click the `E` button and it should download a file
-
-The resulting file is named after the current level, e.g. `Level40-Intermediate.json'.
-The file is a well-structured JSON file containing all your notes for all the visible cards in the level/deck.
-
-You can use https://jsoneditoronline.org/ to inspect and navigate the resulting JSON file. Just paste the contents of the downloaded json into the editor on the left of the screen and click `>` beneath `Transform`.
+## Installation
+- Open the following user script: https://github.com/soborg/travExport/raw/main/gm-travexport.user.js
+- A prompt should appear automatically, click `Install` to install.
 
 
-## Method 2: Manually backing up a deck from Traverse
+## Usage
+- open https://traverse.link/app in your browser and navigate to a deck of your choice
+- a button with the letter `E` should appear on the top right of the screen after a few seconds
+- click the button to get a few options:
+  - download as JSON (downloads only the visible cards)
+  - button to expand subdecks on the current level/deck.
 
-Here's a rough guide to do the same process manually:
+When downloading, the file is named after the current level, e.g. `Level40-Intermediate.json`.
 
-- Open Traverse app in a browser.
-- Open Console
-- find object containing 'topicCards'
-  - there should be anywhere between 50 and hundreds of elements in the list
-  - first card should contain information about the level (e.g. Phase 5 level 35).
-- right-click the object and save as global variable (press enter)
-- you should get a temp filename, e.g. temp0, this is used later.
-- enter the following in the console:
-
-```javascript
-function formatCards(obj) { obj.topicCards.map( (x) => { x.topicCard = null; x.user = null; x.graphInfo = null; } ) };
-```
-The function just removes any recursive object references (`user` and `topicCard`) and potentially useless information (`graphInfo`) and prevents it from being a massive object. There may be other useless information in the resulting object, but it's no big deal to filter this out afterwards.
-
-The `user` object contains information about the current logged in user, like study history and which courses/decks the user has access to. It may be included in the dump if you like, then alter the above javascript function accordingly. However, this will make the resulting object very large. The same information can be found be checking out the other objects logged to the console by the app.
+You can use https://jsoneditoronline.org/ to inspect and navigate the resulting JSON file.
 
 
-Call the function and copy to clipboard:
+# Help!
 
-```javascript
-formatCards(temp0);
-copy(temp0);
-```
+## Common Errors
+In either of the following cases, please create an issue if the suggested solution (if any) does not work. Preferably include a screencap or text-copy of any errors (if available) in the browser console log.
 
-Open a text editor and paste the content, save. The file should be valid JSON.
+### Q: The resulting JSON file is empty?
+The script failed to parse your notes.
+I've only encounted a few edge-cases in how personal notes are parsed but there may be exceptions I've not considered.
 
-The content contains all relevant information for each card: props, notes, links to audio/images, etc.
+### Q: Nothing happens when I click the 'Download as JSON' button?
+Script is not behaving, or the data the script is looking for is no longer where it's supposed to be.
 
-I've found no scheduling information for each card.
+### Q: There is not E-button?
+Try refreshing the browser tab. Make sure the `travExport` user-script is enabled in GreaseMonkey/Tampermonkey.
 
-Done.
-
-# Contributing
-
-Feel free to request features or make pull-requests for stuff you'd like the project to do.
+### Q: Something else?
+Feel free to make an issue if something's broken or otherwise doesn't work as expected.
 
 
-# Help?
+# Limitations
+The script is only tested to handle the Mandarin Blueprint decks in Traverse. It will most definitely not work with other Traverse projects.
 
-Feel free to make an issue if something's broken or otherwise doesn't work as expected. I can't guarantee immediate fixes, but feedback is welcome.
-
+Script output is currently *only* JSON. If you want a different format for the resulting data, please consider other tools to do the conversion, or create a feature-/pull-request detailing your needs.
 
 
 # Example
+Check out `example_output_card.json` for an example of what the output looks like (recently exported with v0.10 of the user script).
+The output was pretty-printed using https://jsoneditoronline.org/.
 
-Check out `example_output_card.json` for an example of what the output (of one card) contains and looks like.
+
+# Contributing
+I've kept the scope of the project quite narrow, but still feel free to request features or make pull-requests for stuff you'd like the project to do.
+
