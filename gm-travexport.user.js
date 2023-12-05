@@ -2,13 +2,16 @@
 // @name         travExport
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
-// @author			 soborg
-// @version      0.12
+// @author       soborg
+// @version      0.13
 // @grant        unsafeWindow,GM_addStyle
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+//
+// 0.13  (2023-12-05): fix title shenanigans on download buttons
 //
 //
 // 0.12  (2023-12-05): support downloading very flattened (1 level) json, or lightly nested (2-3 levels)
@@ -350,14 +353,15 @@
       }
     });
     var outer_div = document.createElement('div');
-    outer_div.setAttribute('title', 'Traverse Export Toolbox');
     outer_div.classList.toggle("dropdown");
     var button = document.createElement('button');
     button.textContent = 'E';
     button.classList.toggle('homescreen-button');
     button.classList.toggle('dropbtn');
+    button.setAttribute('title', 'Traverse Export Toolbox');
     button.addEventListener('click', myDropdown, false);
     outer_div.appendChild(button);
+
     var inner_div = document.createElement('div');
     inner_div.id = 'myDropdown';
     inner_div.classList.toggle("dropdown-content");
@@ -370,7 +374,7 @@
     inner_div.appendChild(a_export);
 
     var a_export_nested = document.createElement('a');
-    a_export.setAttribute('title', 'Download visible cards as a nested JSON (machine-readable format)');
+    a_export_nested.setAttribute('title', 'Download visible cards as a nested JSON (machine-readable format)');
     a_export_nested.textContent = 'Export as JSON (nested)';
     a_export_nested.addEventListener('click', collectAndDownloadCardsNested, false);
     inner_div.appendChild(a_export_nested);
