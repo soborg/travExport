@@ -2,7 +2,6 @@
   {
     "id": "技",
     "title": "技",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "STROKE ORDER": "",
     "HANZI": "技",
@@ -20,7 +19,6 @@
   {
     "id": "鼓",
     "title": "鼓",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "IS IT A ONE-CHARACTER WORD?": "Y",
     "HANZI": "鼓",
@@ -38,7 +36,6 @@
   {
     "id": "护",
     "title": "护",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "NOTES": "",
     "KEYWORD": "To Protect",
@@ -56,7 +53,6 @@
   {
     "id": "扁",
     "title": "扁",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "STROKE ORDER": "",
     "AUDIO": "",
@@ -74,7 +70,6 @@
   {
     "id": "扁（PROP）",
     "title": "扁（PROP）",
-    "template": "/Mandarin_Blueprint/PROP REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "SOURCE LESSON": "",
     "COMPONENT": "扁",
@@ -84,7 +79,6 @@
   {
     "id": "编",
     "title": "编",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "AUDIO": "",
     "KEYWORD": "To Edit",
@@ -102,7 +96,6 @@
   {
     "id": "偏",
     "title": "偏",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "IS IT A ONE-CHARACTER WORD?": "Y",
     "AUDIO": "",
@@ -120,7 +113,6 @@
   {
     "id": "遍",
     "title": "遍",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "Tags": "4-MAKE-A-MOVIE, MBMLEVEL40",
     "KEYWORD": "Everywhere",
@@ -137,7 +129,6 @@
   {
     "id": "篇",
     "title": "篇",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
     "STROKE ORDER": "",
     "IS IT A ONE-CHARACTER WORD?": "Y",
@@ -153,7 +144,6 @@
   },
   {
     "title": "骗",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "id": "骗",
     "deckTitle": "Level 40 - Intermediate",
     "STROKE ORDER": "",
@@ -169,7 +159,6 @@
     "Prop(s)": "马（PROP）, 扁（PROP）"
   },
   {
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "id": "控",
     "title": "控",
     "deckTitle": "Level 40 - Intermediate",
