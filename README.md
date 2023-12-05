@@ -61,7 +61,7 @@ Script output is currently *only* JSON. If you want a different format for the r
 
 
 # Example
-Check out `example_output_card.json` for an example of what the output looks like (recently exported with v0.10 of the user script).
+Check out `example_output_card.json` for an example of what the output looks like (recently exported with v0.11 of the user script).
 The output was pretty-printed using https://jsoneditoronline.org/.
 
 
