@@ -3,8 +3,8 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author       soborg
-// @version      0.13
-// @grant        unsafeWindow,GM_addStyle
+// @version      0.14
+// @grant        unsafeWindow
 // @match        https://traverse.link/*
 // ==/UserScript==
 
