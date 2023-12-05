@@ -1,151 +1,387 @@
-{
-    "id": "\u4e14",
-    "title": "\u4e14",
+[
+  {
+    "id": "技",
+    "title": "技",
     "userName": "Mandarin_Blueprint",
-    "cardUserLoaded": true,
-    "users": {
-        "Mandarin_Blueprint": {
-            "reviews": [],
-            "notes": {
-                "0": {
-                    "created": {
-                        "seconds": 1655437134,
-                        "nanoseconds": 510000000
-                    },
-                    "md": "## Movie review: \u4e14\n\n**Keyword**\n\nMoreover\n\n\\\n**Pinyin**\n\nqi\u011b\n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1539165993\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3)  &nbsp;\n  &nbsp;\n\n  \n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1538206276\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3)  &nbsp;\n  &nbsp;"
-                }
-            },
-            "dueTime": {
-                "seconds": 1641817609,
-                "nanoseconds": 364000000
-            },
-            "reviewTime": null,
-            "seen": {
-                "seconds": 1641807214,
-                "nanoseconds": 394000000
-            },
-            "prompts": {
-                "front-1": {
-                    "isTemplate": true,
-                    "answerMd": "# \u4e14\n\n ![](https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/Mandarin_Blueprint%2F1641807386_1TO36_580_%E4%B8%94.gif?alt=media&token=89e2bdde-ae9c-412f-8ebf-a584b19c4eec)\n\n\\\n\n\n\n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1539165993\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3)  &nbsp;\n  &nbsp;\n\n  \n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1538206276\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3)  &nbsp;\n  &nbsp;",
-                    "reverseOf": "front-0",
-                    "md": "# **MOVIE REVIEW**\n\n**Keyword**\n\n## Moreover\n\n\\\n**Pinyin**\n\n### qi\u011b\n\n\\\nWrite this character with **pen & paper**\n\n\\\n",
-                    "created": {
-                        "seconds": 1655437134,
-                        "nanoseconds": 510000000
-                    },
-                    "req": {
-                        "condition": "all",
-                        "fields": [
-                            "HANZI"
-                        ]
-                    }
-                },
-                "front-0": {
-                    "reverseOf": "front-0",
-                    "md": "# **MOVIE REVIEW**\n\n# \u4e14\n\n\\\nWhat is the **keyword & pronunciation** for this character?\n\n\\\n",
-                    "req": {
-                        "condition": "any",
-                        "fields": [
-                            "KEYWORD",
-                            "PINYIN"
-                        ]
-                    },
-                    "isTemplate": true,
-                    "created": {
-                        "seconds": 1655437134,
-                        "nanoseconds": 510000000
-                    },
-                    "answerMd": "**Keyword**\n\nMoreover\n\n\\\n**Pinyin**\n\nqi\u011b\n\n\\\n\n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1539165993\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3)  &nbsp;\n  &nbsp;\n\n  \n\n  &nbsp;\n  &nbsp;\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin\\_Blueprint/rec1538206276\\_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3)  &nbsp;\n  &nbsp;\n\n\\\n"
-                }
-            },
-            "fields": {
-                "Tags": "[4-MAKE-A-MOVIE](/Mandarin_Blueprint/4-MAKE-A-MOVIE)\n[MBMLEVEL36](/Mandarin_Blueprint/MBMLEVEL36)",
-                "IS IT A ONE-CHARACTER WORD?": "",
-                "NOTES": "",
-                "HANZI": "\u4e14",
-                "PINYIN": "qi\u011b",
-                "STROKE ORDER": "![](https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/Mandarin_Blueprint%2F1641807386_1TO36_580_%E4%B8%94.gif?alt=media&token=89e2bdde-ae9c-412f-8ebf-a584b19c4eec)",
-                "KEYWORD": "Moreover",
-                "AUDIO": "\u00a0\n\u00a0\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3)\n\n  \u00a0\n\u00a0\n\n\u00a0\n\u00a0\n[https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3](https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3)\n\n  \u00a0\n\u00a0"
-            },
-            "fieldsHtml": {
-                "AUDIO": "<p>&nbsp;\n&nbsp;\n<react-embed src=\"https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3\" content=\"https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1539165993_1537776411825.mp3\"></react-embed>  &nbsp;\n&nbsp;</p><p>&nbsp;\n&nbsp;\n<react-embed src=\"https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3\" content=\"https://storage.googleapis.com/alley-d0944.appspot.com/Mandarin_Blueprint/rec1538206276_1537776411825.mp3\"></react-embed>  &nbsp;\n&nbsp;</p>",
-                "STROKE ORDER": "<p><img src=\"https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/Mandarin_Blueprint%2F1641807386_1TO36_580_%E4%B8%94.gif?alt=media&amp;token=89e2bdde-ae9c-412f-8ebf-a584b19c4eec\" width=\"100%\" height=\"auto\"></p><p></p>"
-            },
-            "finished": {
-                "seconds": 1641817618,
-                "nanoseconds": 631000000
-            },
-            "lastOpened": null
-        },
-        "SYvurrXoqcPF1zhUepXCtIiy8N03": {
-            "finished": {
-                "seconds": 1689429673,
-                "nanoseconds": 995000000
-            },
-            "seen": {
-                "seconds": 1689429341,
-                "nanoseconds": 826000000
-            },
-            "userName": "SYvurrXoqcPF1zhUepXCtIiy8N03",
-            "fields": {
-                "NOTES": "Actor: qi- Female\n\nSet: -e  Main exercise hall\n\nProp(s):\n\n\u76ee (Eye)\n\n\u4e00 (Razor Blade)\n\n1. I can\u2019t come up with anything, ==MOREOVER== the story would likely be bad anyway"
-            },
-            "fieldsHtml": {
-                "NOTES": "<p>Actor: qi- Female</p><p>Set: -e  Main exercise hall</p><p>Prop(s):</p><p>\u76ee (Eye)</p><p>\u4e00 (Razor Blade)</p><p></p><ol><li><p>I can\u2019t come up with anything, <mark class=\"highlight-review\">MOREOVER</mark> the story would likely be bad anyway</p></li></ol>"
-            },
-            "graphInfo": {
-                "parents": [
-                    "/Mandarin_Blueprint/efd3pudof0ay9wai84abbh4e"
-                ]
-            },
-            "title": "\u4e14",
-            "author": "Mandarin_Blueprint",
-            "id": "\u4e14",
-            "users": {
-                "SYvurrXoqcPF1zhUepXCtIiy8N03": {
-                    "reviews": [],
-                    "notes": {},
-                    "dueTime": null,
-                    "reviewTime": null,
-                    "seen": {
-                        "seconds": 1689429341,
-                        "nanoseconds": 826000000
-                    },
-                    "prompts": {},
-                    "fields": {
-                        "NOTES": "Actor: qi- Female\n\nSet: -e  Main exercise hall\n\nProp(s):\n\n\u76ee (Eye)\n\n\u4e00 (Razor Blade)\n\n1. I can\u2019t come up with anything, ==MOREOVER== the story would likely be bad anyway"
-                    },
-                    "fieldsHtml": {
-                        "NOTES": "<p>Actor: qi- Female</p><p>Set: -e  Main exercise hall</p><p>Prop(s):</p><p>\u76ee (Eye)</p><p>\u4e00 (Razor Blade)</p><p></p><ol><li><p>I can\u2019t come up with anything, <mark class=\"highlight-review\">MOREOVER</mark> the story would likely be bad anyway</p></li></ol>"
-                    },
-                    "finished": {
-                        "seconds": 1689429673,
-                        "nanoseconds": 995000000
-                    },
-                    "lastOpened": null
-                }
-            }
-        }
-    },
-    "graphInfo": null,
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "publishedJourneys": [
-        "/Mandarin_Blueprint/Phase 5"
+      "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "allowDuplicate": false,
-    "templateRebuildTime": {
-        "seconds": 1655437134,
-        "nanoseconds": 510000000
-    },
-    "topic": "/Mandarin_Blueprint/efd3pudof0ay9wai84abbh4e",
-    "appearance": {
-        "color": "#bed3f3"
-    },
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
-    "doRepeat": false,
-    "free": false,
-    "isDummy": false,
-    "user": null,
-    "topicCard": null
-}
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "PINYIN": "jì",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "AUDIO": [
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "",
+      "STROKE ORDER": "",
+      "KEYWORD": "Skill",
+      "NOTES": "",
+      "Links": {
+        "Actor": "ji-",
+        "Set": "-Ø Null",
+        "Prop(s)": [
+          "扌（PROP）",
+          "支（PROP）"
+        ]
+      },
+      "HANZI": "技"
+    },
+    "user_fields": {
+      "NOTES": [
+        "ji- tries to draw with her calligraphy pen, but given she’s using a giant foam finger to hold it, it requires great SKILL",
+        "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701368790_image.png?alt=media&token=372674bf-bef0-4440-a5c5-4bf0f72c64f3"
+      ]
+    }
+  },
+  {
+    "id": "鼓",
+    "title": "鼓",
+    "userName": "Mandarin_Blueprint",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "AUDIO": [
+      ],
+      "KEYWORD": "Drum",
+      "HANZI": "鼓",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "PINYIN": "gǔ",
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "STROKE ORDER": "",
+      "Links": {
+        "Actor": "gu-",
+        "Set": "-Ø Null",
+        "Prop(s)": [
+          "士（PROP）",
+          "豆（PROP）",
+          "支（PROP）"
+        ]
+      },
+      "NOTES": ""
+    },
+    "user_fields": {
+      "NOTES": [
+        "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701424067_image.png?alt=media&token=c9bcd474-8926-4a92-831f-83bff76ad4b4"
+      ]
+    }
+  },
+  {
+    "id": "护",
+    "title": "护",
+    "userName": "Mandarin_Blueprint",
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "HANZI": "护",
+      "NOTES": "",
+      "PINYIN": "hù",
+      "KEYWORD": "To Protect",
+      "AUDIO": [
+      ],
+      "STROKE ORDER": "",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "Links": {
+        "Actor": "hu-",
+        "Set": "-Ø Null",
+        "Prop(s)": [
+          "扌（PROP）",
+          "户（PROP）"
+        ]
+      },
+      "IS IT A ONE-CHARACTER WORD?": "Y"
+    },
+    "user_fields": {
+      "NOTES": [
+        "hu- is threatening a bank employee with a giant foam finger, luckily there’s a bank teller window between them to PROTECT the employee"
+      ]
+    }
+  },
+  {
+    "id": "扁",
+    "title": "扁",
+    "userName": "Mandarin_Blueprint",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "PINYIN": "biǎn",
+      "NOTES": "",
+      "STROKE ORDER": "",
+      "Links": {
+        "Actor": "bi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "户（PROP）",
+          "冂（PROP）",
+          "艹（PROP）"
+        ]
+      },
+      "KEYWORD": "Flat",
+      "AUDIO": [
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "HANZI": "扁"
+    },
+    "user_fields": {
+      "NOTES": [
+        "bi- reaches through a bank teller window to lay a rose FLAT into a glass display case"
+      ]
+    }
+  },
+  {
+    "id": "扁（PROP）",
+    "title": "扁（PROP）",
+    "userName": "Mandarin_Blueprint",
+    "template": "/Mandarin_Blueprint/PROP REVIEW",
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "SOURCE LESSON": "",
+      "Tags": [
+        "1-PROPS",
+        "MBMLEVEL40"
+      ],
+      "PROP": "Old Classroom Chalkboard Tablet",
+      "COMPONENT": "扁"
+    },
+    "user_fields": {
+      "PROP": "Clothing iron"
+    }
+  },
+  {
+    "id": "编",
+    "title": "编",
+    "userName": "Mandarin_Blueprint",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "AUDIO": [
+      ],
+      "PINYIN": "biān",
+      "HANZI": "编",
+      "KEYWORD": "To Edit",
+      "Links": {
+        "Actor": "bi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "纟（PROP）",
+          "扁（PROP）"
+        ]
+      },
+      "STROKE ORDER": "",
+      "NOTES": ""
+    },
+    "user_fields": {
+      "NOTES": [
+        "inside a 2D interactive drawing\n\nbi- watches, as a silk moth flutters its wings such that it EDITS a cloth iron out of existence of the 2D drawing."
+      ]
+    }
+  },
+  {
+    "id": "偏",
+    "title": "偏",
+    "userName": "Mandarin_Blueprint",
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "KEYWORD": "Prejudiced",
+      "HANZI": "偏",
+      "STROKE ORDER": "",
+      "NOTES": "",
+      "AUDIO": [
+      ],
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "Links": {
+        "Actor": "pi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "亻（PROP）",
+          "扁（PROP）"
+        ]
+      },
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "PINYIN": "piān"
+    },
+    "user_fields": {
+      "NOTES": [
+        "pi- wants to have someone iron her shirt, Arnold offers his help, but pi- is PREJUDICED towards big bulky men, and thinks they are incapable of regular housework"
+      ]
+    }
+  },
+  {
+    "id": "遍",
+    "title": "遍",
+    "userName": "Mandarin_Blueprint",
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "AUDIO": [
+      ],
+      "STROKE ORDER": "",
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "Links": {
+        "Actor": "bi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "辶（PROP）",
+          "扁（PROP）"
+        ]
+      },
+      "NOTES": "",
+      "KEYWORD": "Everywhere",
+      "PINYIN": "biàn",
+      "HANZI": "遍",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ]
+    },
+    "user_fields": {}
+  },
+  {
+    "userName": "Mandarin_Blueprint",
+    "title": "篇",
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "id": "篇",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "KEYWORD": "A Piece of Writing",
+      "NOTES": "",
+      "HANZI": "篇",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "AUDIO": [
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "Y",
+      "STROKE ORDER": "",
+      "PINYIN": "piān",
+      "Links": {
+        "Actor": "pi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "竹{⺮}（PROP）",
+          "扁（PROP）"
+        ]
+      }
+    }
+  },
+  {
+    "title": "骗",
+    "id": "骗",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "userName": "Mandarin_Blueprint",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "NOTES": "",
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "HANZI": "骗",
+      "PINYIN": "piàn",
+      "Links": {
+        "Actor": "pi-",
+        "Set": "-an",
+        "Prop(s)": [
+          "马（PROP）",
+          "扁（PROP）"
+        ]
+      },
+      "KEYWORD": "To Deceive",
+      "STROKE ORDER": "",
+      "AUDIO": [
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "Y"
+    }
+  },
+  {
+    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "userName": "Mandarin_Blueprint",
+    "id": "控",
+    "title": "控",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "publishedJourneys": [
+      "/Mandarin_Blueprint/Intermediate Course"
+    ],
+    "deckTitle": "Level 40 - Intermediate",
+    "fields": {
+      "NOTES": "",
+      "HANZI": "控",
+      "KEYWORD": "To Control",
+      "PINYIN": "kòng",
+      "AUDIO": [
+      ],
+      "STROKE ORDER": "",
+      "Links": {
+        "Actor": "k-",
+        "Set": "-ong",
+        "Prop(s)": [
+          "扌（PROP）",
+          "穴（PROP）",
+          "工（PROP）"
+        ]
+      },
+      "Tags": [
+        "4-MAKE-A-MOVIE",
+        "MBMLEVEL40"
+      ],
+      "IS IT A ONE-CHARACTER WORD?": "Y"
+    }
+  }
+]
