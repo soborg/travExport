@@ -2,386 +2,316 @@
   {
     "id": "技",
     "title": "技",
-    "userName": "Mandarin_Blueprint",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "PINYIN": "jì",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "AUDIO": [
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "",
-      "STROKE ORDER": "",
-      "KEYWORD": "Skill",
-      "NOTES": "",
-      "Links": {
-        "Actor": "ji-",
-        "Set": "-Ø Null",
-        "Prop(s)": [
-          "扌（PROP）",
-          "支（PROP）"
-        ]
-      },
-      "HANZI": "技"
-    },
-    "user_fields": {
-      "NOTES": [
-        "ji- tries to draw with her calligraphy pen, but given she’s using a giant foam finger to hold it, it requires great SKILL",
-        "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701368790_image.png?alt=media&token=372674bf-bef0-4440-a5c5-4bf0f72c64f3"
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "STROKE ORDER": [],
+    "Links": {
+      "Actor": "ji-",
+      "Set": "-Ø Null",
+      "Prop(s)": [
+        "扌（PROP）",
+        "支（PROP）"
       ]
-    }
+    },
+    "HANZI": "技",
+    "IS IT A ONE-CHARACTER WORD?": "",
+    "AUDIO": [],
+    "KEYWORD": "Skill",
+    "NOTES": "",
+    "PINYIN": "jì",
+    "userNotes": [
+      "ji- tries to draw with her calligraphy pen, but given she’s using a giant foam finger to hold it, it requires great SKILL",
+      "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701368790_image.png?alt=media&token=372674bf-bef0-4440-a5c5-4bf0f72c64f3"
+    ]
   },
   {
     "id": "鼓",
     "title": "鼓",
-    "userName": "Mandarin_Blueprint",
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "AUDIO": [
-      ],
-      "KEYWORD": "Drum",
-      "HANZI": "鼓",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "PINYIN": "gǔ",
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "STROKE ORDER": "",
-      "Links": {
-        "Actor": "gu-",
-        "Set": "-Ø Null",
-        "Prop(s)": [
-          "士（PROP）",
-          "豆（PROP）",
-          "支（PROP）"
-        ]
-      },
-      "NOTES": ""
-    },
-    "user_fields": {
-      "NOTES": [
-        "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701424067_image.png?alt=media&token=c9bcd474-8926-4a92-831f-83bff76ad4b4"
+    "KEYWORD": "Drum",
+    "STROKE ORDER": [],
+    "HANZI": "鼓",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "PINYIN": "gǔ",
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "Links": {
+      "Actor": "gu-",
+      "Set": "-Ø Null",
+      "Prop(s)": [
+        "士（PROP）",
+        "豆（PROP）",
+        "支（PROP）"
       ]
-    }
+    },
+    "AUDIO": [],
+    "NOTES": "",
+    "userNotes": [
+      "https://firebasestorage.googleapis.com/v0/b/alley-d0944.appspot.com/o/SYvurrXoqcPF1zhUepXCtIiy8N03%2F1701424067_image.png?alt=media&token=c9bcd474-8926-4a92-831f-83bff76ad4b4"
+    ]
   },
   {
     "id": "护",
     "title": "护",
-    "userName": "Mandarin_Blueprint",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "HANZI": "护",
-      "NOTES": "",
-      "PINYIN": "hù",
-      "KEYWORD": "To Protect",
-      "AUDIO": [
-      ],
-      "STROKE ORDER": "",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "Links": {
-        "Actor": "hu-",
-        "Set": "-Ø Null",
-        "Prop(s)": [
-          "扌（PROP）",
-          "户（PROP）"
-        ]
-      },
-      "IS IT A ONE-CHARACTER WORD?": "Y"
-    },
-    "user_fields": {
-      "NOTES": [
-        "hu- is threatening a bank employee with a giant foam finger, luckily there’s a bank teller window between them to PROTECT the employee"
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "Links": {
+      "Actor": "hu-",
+      "Set": "-Ø Null",
+      "Prop(s)": [
+        "扌（PROP）",
+        "户（PROP）"
       ]
-    }
+    },
+    "STROKE ORDER": [],
+    "AUDIO": [],
+    "HANZI": "护",
+    "KEYWORD": "To Protect",
+    "PINYIN": "hù",
+    "NOTES": "",
+    "userNotes": [
+      "hu- is threatening a bank employee with a giant foam finger, luckily there’s a bank teller window between them to PROTECT the employee"
+    ]
   },
   {
     "id": "扁",
     "title": "扁",
-    "userName": "Mandarin_Blueprint",
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "PINYIN": "biǎn",
-      "NOTES": "",
-      "STROKE ORDER": "",
-      "Links": {
-        "Actor": "bi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "户（PROP）",
-          "冂（PROP）",
-          "艹（PROP）"
-        ]
-      },
-      "KEYWORD": "Flat",
-      "AUDIO": [
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "HANZI": "扁"
-    },
-    "user_fields": {
-      "NOTES": [
-        "bi- reaches through a bank teller window to lay a rose FLAT into a glass display case"
+    "PINYIN": "biǎn",
+    "NOTES": "",
+    "HANZI": "扁",
+    "STROKE ORDER": [],
+    "AUDIO": [],
+    "Links": {
+      "Actor": "bi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "户（PROP）",
+        "冂（PROP）",
+        "艹（PROP）"
       ]
-    }
+    },
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "KEYWORD": "Flat",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "userNotes": [
+      "bi- reaches through a bank teller window to lay a rose FLAT into a glass display case"
+    ]
   },
   {
     "id": "扁（PROP）",
     "title": "扁（PROP）",
-    "userName": "Mandarin_Blueprint",
     "template": "/Mandarin_Blueprint/PROP REVIEW",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "SOURCE LESSON": "",
-      "Tags": [
-        "1-PROPS",
-        "MBMLEVEL40"
-      ],
-      "PROP": "Old Classroom Chalkboard Tablet",
-      "COMPONENT": "扁"
-    },
-    "user_fields": {
-      "PROP": "Clothing iron"
-    }
+    "SOURCE LESSON": "",
+    "PROP": "Old Classroom Chalkboard Tablet",
+    "COMPONENT": "扁",
+    "Tags": [
+      "1-PROPS",
+      "MBMLEVEL40"
+    ]
   },
   {
     "id": "编",
     "title": "编",
-    "userName": "Mandarin_Blueprint",
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "AUDIO": [
-      ],
-      "PINYIN": "biān",
-      "HANZI": "编",
-      "KEYWORD": "To Edit",
-      "Links": {
-        "Actor": "bi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "纟（PROP）",
-          "扁（PROP）"
-        ]
-      },
-      "STROKE ORDER": "",
-      "NOTES": ""
-    },
-    "user_fields": {
-      "NOTES": [
-        "inside a 2D interactive drawing\n\nbi- watches, as a silk moth flutters its wings such that it EDITS a cloth iron out of existence of the 2D drawing."
+    "PINYIN": "biān",
+    "KEYWORD": "To Edit",
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "AUDIO": [],
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "NOTES": "",
+    "HANZI": "编",
+    "STROKE ORDER": [],
+    "Links": {
+      "Actor": "bi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "纟（PROP）",
+        "扁（PROP）"
       ]
-    }
+    },
+    "userNotes": [
+      "inside a 2D interactive drawing\n\nbi- watches, as a silk moth flutters its wings such that it EDITS a cloth iron out of existence of the 2D drawing."
+    ]
   },
   {
     "id": "偏",
     "title": "偏",
-    "userName": "Mandarin_Blueprint",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "KEYWORD": "Prejudiced",
-      "HANZI": "偏",
-      "STROKE ORDER": "",
-      "NOTES": "",
-      "AUDIO": [
-      ],
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "Links": {
-        "Actor": "pi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "亻（PROP）",
-          "扁（PROP）"
-        ]
-      },
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "PINYIN": "piān"
-    },
-    "user_fields": {
-      "NOTES": [
-        "pi- wants to have someone iron her shirt, Arnold offers his help, but pi- is PREJUDICED towards big bulky men, and thinks they are incapable of regular housework"
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "NOTES": "",
+    "STROKE ORDER": [],
+    "AUDIO": [],
+    "HANZI": "偏",
+    "Links": {
+      "Actor": "pi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "亻（PROP）",
+        "扁（PROP）"
       ]
-    }
+    },
+    "PINYIN": "piān",
+    "KEYWORD": "Prejudiced",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "userNotes": [
+      "pi- wants to have someone iron her shirt, Arnold offers his help, but pi- is PREJUDICED towards big bulky men, and thinks they are incapable of regular housework"
+    ]
   },
   {
     "id": "遍",
     "title": "遍",
-    "userName": "Mandarin_Blueprint",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "AUDIO": [
-      ],
-      "STROKE ORDER": "",
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "Links": {
-        "Actor": "bi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "辶（PROP）",
-          "扁（PROP）"
-        ]
-      },
-      "NOTES": "",
-      "KEYWORD": "Everywhere",
-      "PINYIN": "biàn",
-      "HANZI": "遍",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
+    "PINYIN": "biàn",
+    "STROKE ORDER": [],
+    "Links": {
+      "Actor": "bi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "辶（PROP）",
+        "扁（PROP）"
       ]
     },
-    "user_fields": {}
+    "NOTES": "",
+    "AUDIO": [],
+    "HANZI": "遍",
+    "KEYWORD": "Everywhere",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ]
   },
   {
-    "userName": "Mandarin_Blueprint",
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
+    "id": "篇",
     "title": "篇",
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "id": "篇",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "KEYWORD": "A Piece of Writing",
-      "NOTES": "",
-      "HANZI": "篇",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "AUDIO": [
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "Y",
-      "STROKE ORDER": "",
-      "PINYIN": "piān",
-      "Links": {
-        "Actor": "pi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "竹{⺮}（PROP）",
-          "扁（PROP）"
-        ]
-      }
-    }
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "PINYIN": "piān",
+    "STROKE ORDER": [],
+    "AUDIO": [],
+    "KEYWORD": "A Piece of Writing",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "HANZI": "篇",
+    "Links": {
+      "Actor": "pi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "竹{⺮}（PROP）",
+        "扁（PROP）"
+      ]
+    },
+    "NOTES": ""
   },
   {
+    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "title": "骗",
     "id": "骗",
-    "template": "/Mandarin_Blueprint/MOVIE REVIEW",
-    "userName": "Mandarin_Blueprint",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "NOTES": "",
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "HANZI": "骗",
-      "PINYIN": "piàn",
-      "Links": {
-        "Actor": "pi-",
-        "Set": "-an",
-        "Prop(s)": [
-          "马（PROP）",
-          "扁（PROP）"
-        ]
-      },
-      "KEYWORD": "To Deceive",
-      "STROKE ORDER": "",
-      "AUDIO": [
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "Y"
-    }
+    "NOTES": "",
+    "AUDIO": [],
+    "HANZI": "骗",
+    "Links": {
+      "Actor": "pi-",
+      "Set": "-an",
+      "Prop(s)": [
+        "马（PROP）",
+        "扁（PROP）"
+      ]
+    },
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "KEYWORD": "To Deceive",
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "STROKE ORDER": [],
+    "PINYIN": "piàn"
   },
   {
-    "topic": "/Mandarin_Blueprint/xkne6bvfazw9bh30rt54u65e",
-    "userName": "Mandarin_Blueprint",
-    "id": "控",
     "title": "控",
+    "id": "控",
     "template": "/Mandarin_Blueprint/MOVIE REVIEW",
     "publishedJourneys": [
       "/Mandarin_Blueprint/Intermediate Course"
     ],
     "deckTitle": "Level 40 - Intermediate",
-    "fields": {
-      "NOTES": "",
-      "HANZI": "控",
-      "KEYWORD": "To Control",
-      "PINYIN": "kòng",
-      "AUDIO": [
-      ],
-      "STROKE ORDER": "",
-      "Links": {
-        "Actor": "k-",
-        "Set": "-ong",
-        "Prop(s)": [
-          "扌（PROP）",
-          "穴（PROP）",
-          "工（PROP）"
-        ]
-      },
-      "Tags": [
-        "4-MAKE-A-MOVIE",
-        "MBMLEVEL40"
-      ],
-      "IS IT A ONE-CHARACTER WORD?": "Y"
+    "AUDIO": [],
+    "KEYWORD": "To Control",
+    "NOTES": "",
+    "PINYIN": "kòng",
+    "HANZI": "控",
+    "Tags": [
+      "4-MAKE-A-MOVIE",
+      "MBMLEVEL40"
+    ],
+    "STROKE ORDER": [],
+    "IS IT A ONE-CHARACTER WORD?": "Y",
+    "Links": {
+      "Actor": "k-",
+      "Set": "-ong",
+      "Prop(s)": [
+        "扌（PROP）",
+        "穴（PROP）",
+        "工（PROP）"
+      ]
     }
   }
 ]
