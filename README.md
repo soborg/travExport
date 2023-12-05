@@ -29,7 +29,7 @@ Whatever the reason, this tool attempts to solve that.
 - open https://traverse.link/app in your browser and navigate to a deck of your choice
 - a button with the letter `E` should appear on the top right of the screen after a few seconds
 - click the button to get a few options:
-  - download as JSON (downloads only the visible cards)
+  - download as JSON (downloads only the visible cards). Choose `flat` or `nested`. `flat` is easy to convert to Excel/CSV.
   - button to expand subdecks on the current level/deck.
 
 When downloading, the file is named after the current level, e.g. `Level40-Intermediate.json`.
@@ -63,7 +63,7 @@ Script output is currently *only* JSON. If you want a different format for the r
 
 
 # Example
-Check out `example_output_card.json` for an example of what the output looks like (recently exported with v0.11 of the user script).
+Check out `example_output_card_flat.json` or `example_output_card_nested.json` for examples of what the output looks like (recently exported with v0.12 of the user script).
 The output was pretty-printed using https://jsoneditoronline.org/.
 
 
