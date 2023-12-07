@@ -3,12 +3,15 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author       soborg
-// @version      0.14
+// @version      0.15
 // @grant        unsafeWindow
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+// 0.15  (2023-12-07): sentences are not longer included in the output, even if visible on the graph.
+//                     id field removed. not relevant.
 //
 // 0.14  (2023-12-05): should now also work properly in Edge (possibly other Chromium browsers too)
 //
@@ -181,6 +184,7 @@
         }
         var card = {...unsafeWindow.elm[key].child.pendingProps.children.props.data.card}; // perform a shallow copy of the object
         // remove a lot of irrelevant fields
+        delete card.id;  // useless
         delete card.user;
         delete card.graphInfo;
         delete card.cardUserLoaded;
@@ -218,18 +222,7 @@
           }
           // a whole lot of cleanup
           if (card.Sentence) {
-            card['Highlights'] = [];
-            var sentsplit = card.Sentence.split('==');
-            for (var spl in sentsplit) {
-              if (spl % 2 == 1) {
-                var w = sentsplit[spl];
-                if (card['Highlights'].indexOf(w) < 0) {
-                  card['Highlights'].push(sentsplit[spl]);
-
-                }
-              }
-            }
-            card['Highlights'] = maybeFlatten(card['Highlights'], flat, '\n');
+            continue;
           }
           if (card["Top-Down Word(s)"]) {
             card["Top-Down Word(s)"] = maybeFlatten(card["Top-Down Word(s)"].replaceAll('&nbsp;', '').split('\n'), flat, '\n');
@@ -295,7 +288,9 @@
           }
         }
         delete card.users;
-        cards.push(card);
+        if (!card.Sentence) {
+          cards.push(card);
+        }
         break;
       }
     }
