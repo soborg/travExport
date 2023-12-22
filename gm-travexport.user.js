@@ -3,12 +3,15 @@
 // @namespace    https://github.com/soborg/travExport
 // @description  Export your notes from a Traverse (Mandarin Blueprint) deck to JSON
 // @author       soborg
-// @version      0.15
+// @version      0.16
 // @grant        unsafeWindow
 // @match        https://traverse.link/*
 // ==/UserScript==
 
 // Version history
+//
+// 0.16  (2023-12-22): Fixed prop-parser sometimes failing to extract all linked Props.
+//
 //
 // 0.15  (2023-12-07): sentences are not longer included in the output, even if visible on the graph.
 //                     id field removed. not relevant.
@@ -265,7 +268,7 @@
               if (prev_key != null && prev_key.length > 0) {
                 if (prev_key == "Characters") {
                   splitvalue = splitvalue.split(')').map(unMarkupifyLink).map(decodeComp).filter((x) => x.length > 0);
-                } else if (prev_key == "Prop(s)") {
+                } else if (prev_key == "Prop(s)" || prev_key == "Props") {
                   splitvalue = splitvalue.split(',').map(unMarkupifyLink).map(decodeComp).filter((x) => x.length > 0);
                 } else {
                   splitvalue = [decodeComp(unMarkupifyLink(splitvalue))];
